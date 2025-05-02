@@ -7,12 +7,38 @@
 html,
 body {
     height: 100%;
-    font-family: sans-serif;
+    font-family: 'Inter';
     background-color: #121212;
     color: #CFCFCF;
 }
 
+h3 {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+}
 
+h2 {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+h1 {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+p {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 20;
+    font-weight: 100;
+}
 
 header nav {
 
@@ -84,9 +110,9 @@ header nav ul span {
 }
 
 
-.section1{
+.section1 {
     width: 100%;
-    
+
 }
 
 .hero-container {
@@ -116,11 +142,15 @@ header nav ul span {
 }
 
 .intro-1 {
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .intro-2 {
     margin-top: 20px
+}
+
+.intro-3 {
+    margin-top: 5px;
 }
 
 .social-icons {
@@ -177,10 +207,9 @@ header nav ul span {
 
 }
 
-.section2{
+.section2 {
     width: 100%;
-    border: solid;
-    
+    background-color: #202020;
 }
 
 .about-me-container {
@@ -189,7 +218,6 @@ header nav ul span {
 }
 
 .about-me-box {
-    border: solid;
     height: 822px;
     margin: 200px 0;
     display: flex;
@@ -200,21 +228,86 @@ header nav ul span {
     flex: 1 0 50%;
     height: 80%;
     box-sizing: border-box;
-    border: solid;
+    padding-left: 4rem;
+}
 
+.slash {
+    color: #171C6E;
+}
+
+.about-me-h3 {
+    margin-top: 135px;
+    margin-bottom: 24px;
+}
+
+.about-me-h2 {
+    margin-right: 12rem;
+}
+
+.about-me-paragraph {
+    line-height: 40px;
+    margin-top: 24px;
+    text-align: justify;
+    margin-right: 12rem;
 }
 
 .educacion {
     flex: 1 0 50%;
     height: 80%;
     box-sizing: border-box;
-    border: solid;
+    padding-left: 4rem;
+    padding-top: 4rem;
+}
 
+.educacion-p {
+    margin-top: 4rem;
+}
+
+.educacion-sperator{
+    position: absolute;
+    margin: 24px 0;
+    width: 700px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #CFCFCF, transparent);
+    transform: translateX(-15%);
 }
 
 .empresas {
     flex: 1 0 50%;
     height: 20%;
     box-sizing: border-box;
-    border: solid;
+    padding-left: 4rem;
 }
+
+  
+.empresas-sperator{
+    position: absolute;
+    margin: auto;
+    width: 1440px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #CFCFCF, transparent);
+    transform: translateX(-8%);
+
+}
+
+.empresas-h3 {
+    padding-top: 2rem;
+    margin-right: 8rem;
+}
+
+.empresa-row {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+  }
+  
+  .icon-text {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+
+  .icon-text i {
+    margin-left: 44px;
+  }
