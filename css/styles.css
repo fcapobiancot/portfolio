@@ -384,8 +384,99 @@ header nav ul span {
     margin-right: 24px;
 }
 
+.projects-separator{
+    position: absolute;
+    margin: 2rem 0;
+    width: 1440px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #CFCFCF, transparent);
+    transform: translateX(16%);
+}
+
+.projects {
+    padding: 60px 20px;
+    background-color: #161616;
+    color: #CFCFCF;
+    text-align: center;
+}
+
+.projects-container {
+    max-width: calc(100% - 520px);
+    margin: 0 auto;
+}
+
+.projects-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.projects-description {
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: #202020;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    background-color: #333333;
+    color: #CFCFCF;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.project-card .fa-github {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    font-size: 24px;
+    color: #CFCFCF;
+    cursor: pointer;
+}
+
+.project-card .fa-github:hover {
+    color: #007BFF;
+}
 
 
+.project-card {
+    padding: 20px 40px 20px 20px;
+}
 
 
 
