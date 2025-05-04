@@ -9,6 +9,9 @@ Este es mi portafolio personal como ingeniero de software, donde muestro mis pro
 - `js/`: Scripts JavaScript.
 - `assets/`: Imágenes y otros recursos.
 
+## Ramas
+Cada rama es una iteracion del portfolio
+
 ## ¿Qué se hace?
 Se presenta mi perfil profesional, proyectos destacados, blog y formas de contacto.
 
