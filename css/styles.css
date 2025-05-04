@@ -597,23 +597,81 @@ header nav ul span {
     margin-left: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer {
+.profile-container {
+    width: 100%;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
     padding: 20px 0;
-    background-color: #202020;
-    text-align: center;
-    color: #CFCFCF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #444;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+}
+
+.profile-title {
+    font-size: 14px;
+    color: #aaa;
+    margin: 0 0 15px 0;
+}
+
+.social-icons3 {
+    font-size: 24px;
+    text-align: left;
+}
+
+.footer {
+    max-width: 100%;
+    padding: 15px 0;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    margin-left: 70px;
+    margin-right: 320px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    margin: 0 20px;
+}
+
+.nav-link:hover {
+    color: #aaa;
+}
+
+.copyright {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 70px;
 }
