@@ -19,4 +19,4 @@ El portafolio está desarrollado con HTML, CSS y JavaScript, siguiendo buenas pr
 Para mostrar mis habilidades, experiencia y proyectos a potenciales empleadores o colaboradores.
 
 ## Link al Figma
-[Enlace a tu diseño en Figma](https://www.figma.com/file/tu-link)
+[Enlace a tu diseño en Figma](https://www.figma.com/design/Hj4AOfnx3kzK7lwdLdsm5l/Personal-Portfolio?node-id=0-1&t=84TwfKD4SQS28Z0Y-1)
