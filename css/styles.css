@@ -12,6 +12,10 @@ body {
     color: #CFCFCF;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h3 {
     color: #B3B3B3;
     font-family: 'Inter';
@@ -112,7 +116,7 @@ header nav ul span {
 
 .section1 {
     width: 100%;
-
+    min-height: 600px;
 }
 
 .hero-container {
@@ -135,6 +139,10 @@ header nav ul span {
     justify-content: center;
     align-items: start;
 
+}
+
+.headshot {
+    margin-left: 2rem;
 }
 
 .introduction {
