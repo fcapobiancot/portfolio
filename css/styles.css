@@ -159,6 +159,16 @@ header nav ul span {
     font-size: 38px;
 }
 
+.social-link {
+    color: inherit;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-link:hover {
+    color: #000000;
+}
+
 .social-icons .fa {
     margin-right: 22px;
 }
@@ -294,7 +304,16 @@ header nav ul span {
 
 .empresas-h3 {
     padding-top: 2rem;
-    margin-right: 8rem;
+    margin-right: 6rem;
+}
+
+.blog-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.blog-link:hover {
+    color: #000000;
 }
 
 .empresa-row {
@@ -470,7 +489,7 @@ header nav ul span {
 }
 
 .project-card .fa-github:hover {
-    color: #007BFF;
+    color: #000000;
 }
 
 
