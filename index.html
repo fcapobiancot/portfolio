@@ -1,486 +1,425 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de un desarrollador web con ejemplos de proyectos y habilidades.">
+    <meta name="keywords" content="Portafolio, Desarollador, Web, ingeniero, proyectos, habilidades">
+    <meta name="author" content="Fernando Capobianco">
+    <title>Portafolio de Fernando</title>
+    <link rel="stylesheet" href="./blocks/styles.css">
 </head>
 
 <body>
-    <header id="home">
-        <nav>
-            <ul>
-                <span class="divider1"></span>
-                <li><a href="#home">Home</a></li>
-                <span class="divider2"></span>
-                <li><a href="#about-me">About</a></li>
-                <span class="divider3"></span>
-                <li><a href="#proyectos">Projects</a></li>
-                <span class="divider4"></span>
-                <li><a href="#blog">Blog</a></li>
-                <span class="divider5"></span>
+    <header class="body__header">
+        <nav class="navbar">
+            <span class="divider divider--horizontal"></span>
+            <ul class="navbar__list ">
+                <span class="divider divider--vertical divider--vertical--home"></span>
+                <li class="navbar__item "><a href="#home">Home</a></li>
+                <span class="divider divider--vertical divider--vertical--about"></span>
+                <li class="navbar__item "><a href="#about">About Me</a></li>
+                <span class="divider divider--vertical divider--vertical--proyectos"></span>
+                <li class="navbar__item "><a href="#projects">Proyectos</a></li>
+                <span class="divider divider--vertical divider--vertical--blogs"></span>
+                <li class="navbar__item "><a href="#blogcontact">Blogs</a></li>
+                <span class="divider divider--vertical divider--vertical--last"></span>
             </ul>
         </nav>
     </header>
+    <main class="header__main">
+        <section id="home" class="hero__section">
+            <div class="hero section__hero">
+                <img src="data:image/jpeg;base64,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"
+                    alt="Headshot" width="250" height="322">
+                <div class="hero__text">
 
-    <main>
-        <div class="section1">
-            <div class="hero-container">
-                <div class="hero-box">
-                    <span class="line-x1"></span>
-                    <span class="line-y1"></span>
-                    <div class="hero">
-                        <img class="headshot"
-                            src="data:image/jpeg;base64,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"
-                            alt="Headshot" width="250" height="322">
-                        <div class="introduction">
-                            <h2>Hola!</h4>
-                                <h1>Soy Fernando Capobianco</h1>
-                                <p class="intro-1">Ingeniero de Software, actualmente establecido en Santa Cruz,
-                                    Bolivia,
-                                    especializado
-                                    en aplicaciones
-                                    web y desarrollo backend.</p>
-                                <p class="intro-2">Construyo software con propósito, claridad y un toque de arte.</p>
-                                <p class="intro-3">Bienvenido a mi espacio digital.</p>
-                                <div class="social-icons">
-                                    <a href="https://www.linkedin.com/in/fernandocapobiancot2/" target="_blank"
-                                        class="social-link">
-                                        <span class="fa fa-linkedin-square"></span>
-                                    </a>
-                                    <a href="https://github.com/fcapobiancot" target="_blank" class="social-link">
-                                        <span class="fa fa-github"></span>
-                                    </a>
-                                    <a href="https://wa.me/59177342358" target="_blank" class="social-link">
-                                        <span class="fa fa-whatsapp"></span>
-                                    </a>
-                                    <a href="https://www.instagram.com/your-profile" target="_blank"
-                                        class="social-link">
-                                        <span class="fa fa-instagram"></span>
-                                    </a>
-                                </div>
-                        </div>
-                    </div>
-                    <span class="line-x2"></span>
-                    <span class="line-y2"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="section2" id="about-me">
-            <div class="about-me-container">
-                <div class="about-me-box">
-                    <div class="about-me">
-                        <h3 class="about-me-h3"><span class="slash">/</span> ABOUT ME</h3>
-                        <h2 class="about-me-h2">Construyendo soluciones que importan desde 2020</h2>
-                        <p class="about-me-paragraph">Desde hace más de 4 años desarrollo aplicaciones web enfocadas en
-                            claridad, rendimiento y
-                            experiencia de usuario. Soy ingeniero de software con enfoque fullstack, especializado en C#
-                            y
-                            ASP.NET, y actualmente profundizo mi formación en Ingeniería de Software.
+                    <h2>Hola!</h4>
+                        <span class="divider divider--horizontal1--hero"></span>
+                        <span class="divider divider--vertical1--hero"></span>
+                        <h1>Soy Fernando Capobianco</h1>
+                        <p>Ingeniero de Software, actualmente establecido en Santa Cruz,
+                            Bolivia,especializado en aplicaciones web y desarrollo backend.
+                            <br>Construyo software con propósito, claridad y un toque de arte.
+                            <br>Bienvenido a mi espacio digital.
                         </p>
-                    </div>
-                    <div class="educacion">
-                        <h3 class="about-me-h3"><span class="slash">/</span> EDUCACION & EXPERIENCIA</h3>
-                        <p class="educacion-p">UNIVERSIDAD CATOLICA BOLIVIANA<span class="slash"> / </span>ENE 2026</p>
-                        <h2>Ingieneria de Software</h2>
-                        <span class="educacion-sperator"></span>
-                        <p class="educacion-p">GOOGLE<span class="slash"> / </span>ENE 2025</p>
-                        <h2>Google Agile Essentials</h2>
-                    </div>
-                    <div class="empresas">
-                        <span class="empresas-sperator"></span>
-                        <div class="empresa-row">
-                            <h3 class="empresas-h3">TRABAJADO PARA</h3>
-                            <div class="icon-text">
-                                <i class="fa fa-building-o" aria-hidden="true"></i>
-                                <span>empresa</span>
-                                <i class="fa fa-building-o" aria-hidden="true"></i>
-                                <span>empresa</span>
-                                <i class="fa fa-building-o" aria-hidden="true"></i>
-                                <span>empresa</span>
-                                <i class="fa fa-building-o" aria-hidden="true"></i>
-                                <span>empresa</span>
-                                <i class="fa fa-building-o" aria-hidden="true"></i>
-                                <span>empresa</span>
-                                <i class="fa fa-building-o" aria-hidden="true"></i>
-                                <span>empresa</span>
-                            </div>
+                        <div class="hero__social-icons">
+                            <a href="https://www.linkedin.com/in/fernandocapobiancot2/" target="_blank">
+                                <span class="fa fa-linkedin-square"></span>
+                            </a>
+                            <a href="https://github.com/fcapobiancot" target="_blank">
+                                <span class="fa fa-github"></span>
+                            </a>
+                            <a href="https://wa.me/59177342358" target="_blank">
+                                <span class="fa fa-whatsapp"></span>
+                            </a>
+                            <a href="https://www.instagram.com/your-profile" target="_blank">
+                                <span class="fa fa-instagram"></span>
+                            </a>
+                        </div>
+                        <span class="divider divider--horizontal2--hero"></span>
+                        <span class="divider divider--vertical2--hero"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about__section">
+            <div class="about section__about">
+                <div class="about__content-1">
+                    <h3 class="about__content-1__h3">ABOUT ME</h3>
+                    <h2 class="about__content-1__h2">Construyendo soluciones<br> que importan desde 2020</h2>
+                    <p class="about__content-1__p">Desde hace más de 4 años desarrollo aplicaciones web enfocadas en
+                        claridad, rendimiento y experiencia de usuario. Soy ingeniero de software con enfoque fullstack,
+                        especializado en C# y ASP.NET, y actualmente profundizo mi formación en Ingeniería de Software.
+                    </p>
+                </div>
+                <div class="about__content-2">
+                    <h3 class="about__content-2__h3">EDUCACION & EXPERIENCIA</h3>
+                    <p class="about__content-2__p">UNIVERSIDAD CATOLICA BOLIVIANA / ENE 2026</p>
+                    <h2>Ingieneria de Software</h2>
+                    <hr>
+                    <p class="about__content-2__p">GOOGLE / ENE 2025</p>
+                    <h2>Google Agile Essentials</h2>
+                </div>
+                <div class="about__content-3">
+                    <hr>
+                    <div class="about__content-3__companies">
+                        <h3>TRABAJADO PARA</h3>
+                        <div class="about__content-3__companies__logos">
+                            <i class="fa fa-building-o" aria-hidden="true"><span>empresa</span></i>
+                            <i class="fa fa-building-o" aria-hidden="true"><span>empresa</span></i>
+                            <i class="fa fa-building-o" aria-hidden="true"><span>empresa</span></i>
+                            <i class="fa fa-building-o" aria-hidden="true"><span>empresa</span></i>
+                            <i class="fa fa-building-o" aria-hidden="true"><span>empresa</span></i>
+                            <i class="fa fa-building-o" aria-hidden="true"><span>empresa</span></i>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section3">
-            <div class="experiencia-container">
-                <div class="top-content">
-                    <h3 class="experiencia-h3"><span class="slash">/</span> MI EXPERIENCIA</h3>
-                    <h2 class="experiencia-h2">Construyo arquitecturas backend eficientes, seguras y escalables con
-                        propósito</h2>
-                    <span class="experiencia-separator"></span>
+        <section id="experience" class="experience__section">
+            <div class="experience section__experience">
+                <div class="experience__content-1">
+                    <h3 class="experience__content-1__h3"> MI EXPERIENCIA</h3>
+                    <h2>Construyo arquitecturas backend eficientes, seguras y escalables con propósito</h2>
+                    <hr>
                 </div>
-                <div class="skills-box">
-                    <div class="skillset">
-                        <h3 class="experiencia-h3">SKILL SET</h3>
-                        <div class="tech-list">
-                            <ul>
-                                <li>
-                                    <h2 class="experiencia-h2-1">React JS</h2>
-                                </li>
-                                <li>
-                                    <h2 class="experiencia-h2-1">Node JS</h2>
-                                </li>
-                                <li>
-                                    <h2 class="experiencia-h2-1">ASP.NET Core</h2>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <h2 class="experiencia-h2-1">Entity Framewok</h2>
-                                </li>
-                                <li>
-                                    <h2 class="experiencia-h2-1">SQL & NoSQL</h2>
-                                </li>
-                                <li>
-                                    <h2 class="experiencia-h2-1">API's Rest</h2>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="experience__content-2">
+                    <h3>SKILL SET</h3>
+                    <div class="experience__content-2__techlist">
+                        <ul>
+                            <li>
+                                <h2 class="experience__content-2__techlist__h2">React JS</h2>
+                            </li>
+                            <li>
+                                <h2 class="experience__content-2__techlist__h2">Node JS</h2>
+                            </li>
+                            <li>
+                                <h2 class="experience__content-2__techlist__h2">ASP.NET Core</h2>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <h2 class="experience__content-2__techlist__h2">Entity Framewok</h2>
+                            </li>
+                            <li>
+                                <h2 class="experience__content-2__techlist__h2">SQL & NoSQL</h2>
+                            </li>
+                            <li>
+                                <h2 class="experience__content-2__techlist__h2">API's Rest</h2>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="tecnologias">
-                        <h3 class="experiencia-h3">Tecnologias</h3>
+                </div>
+                <div class="experience__content-3">
+                    <h3>Tecnologias</h3>
+                    <svg viewBox="0 0 128 128">
+                        <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path>
+                        <path fill="#323330"
+                            d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z">
+                        </path>
+                    </svg>
 
-                        <svg viewBox="0 0 128 128">
-                            <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path>
-                            <path fill="#323330"
-                                d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z">
-                            </path>
-                        </svg>
-
-                        <svg viewBox="0 0 128 128">
-                            <g id="surface1">
-                                <path
-                                    style=" stroke:none;fill-rule:nonzero;fill:rgb(86.666667%,0%,19.215686%);fill-opacity:1;"
-                                    d="M 64 15.359375 L 16.332031 32.359375 L 23.601562 95.386719 L 64 117.761719 L 104.398438 95.386719 L 111.667969 32.359375 Z M 64 15.359375 ">
-                                </path>
-                                <path
-                                    style=" stroke:none;fill-rule:nonzero;fill:rgb(76.470588%,0%,18.431373%);fill-opacity:1;"
-                                    d="M 64 15.359375 L 64 26.726562 L 64 26.675781 L 64 117.761719 L 104.398438 95.386719 L 111.667969 32.359375 Z M 64 15.359375 ">
-                                </path>
-                                <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"
-                                    d="M 64 26.675781 L 34.203125 93.492188 L 45.3125 93.492188 L 51.300781 78.539062 L 76.59375 78.539062 L 82.585938 93.492188 L 93.695312 93.492188 Z M 72.703125 69.324219 L 55.296875 69.324219 L 64 48.382812 Z M 72.703125 69.324219 ">
-                                </path>
-                            </g>
-                        </svg>
-
-                        <svg viewBox="0 0 128 128">
-                            <path fill="url(#a)"
-                                d="M66.958.825a6.07 6.07 0 0 0-6.035 0L11.103 29.76c-1.895 1.072-2.96 3.095-2.96 5.24v57.988c0 2.143 1.183 4.167 2.958 5.24l49.82 28.934a6.07 6.07 0 0 0 6.036 0l49.82-28.935c1.894-1.072 2.958-3.096 2.958-5.24V35c0-2.144-1.183-4.167-2.958-5.24z">
-                            </path>
-                            <path fill="url(#b)"
-                                d="M116.897 29.76 66.841.825A8.161 8.161 0 0 0 65.302.23L9.21 96.798a6.251 6.251 0 0 0 1.657 1.43l50.057 28.934c1.42.833 3.076 1.072 4.615.595l52.66-96.925a3.702 3.702 0 0 0-1.302-1.072z">
-                            </path>
-                            <path fill="url(#c)"
-                                d="M116.898 98.225c1.42-.833 2.485-2.262 2.958-3.81L65.066.108c-1.42-.238-2.959-.119-4.26.715L11.104 29.639l53.606 98.355c.71-.12 1.54-.358 2.25-.715z">
-                            </path>
-                            <defs>
-                                <linearGradient id="a" x1="34.513" x2="27.157" y1="15.535" y2="30.448"
-                                    gradientTransform="translate(-129.242 -73.715) scale(6.18523)"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#3F873F"></stop>
-                                    <stop offset=".33" stop-color="#3F8B3D"></stop>
-                                    <stop offset=".637" stop-color="#3E9638"></stop>
-                                    <stop offset=".934" stop-color="#3DA92E"></stop>
-                                    <stop offset="1" stop-color="#3DAE2B"></stop>
-                                </linearGradient>
-                                <linearGradient id="b" x1="30.009" x2="50.533" y1="23.359" y2="8.288"
-                                    gradientTransform="translate(-129.242 -73.715) scale(6.18523)"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop offset=".138" stop-color="#3F873F"></stop>
-                                    <stop offset=".402" stop-color="#52A044"></stop>
-                                    <stop offset=".713" stop-color="#64B749"></stop>
-                                    <stop offset=".908" stop-color="#6ABF4B"></stop>
-                                </linearGradient>
-                                <linearGradient id="c" x1="21.917" x2="40.555" y1="22.261" y2="22.261"
-                                    gradientTransform="translate(-129.242 -73.715) scale(6.18523)"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop offset=".092" stop-color="#6ABF4B"></stop>
-                                    <stop offset=".287" stop-color="#64B749"></stop>
-                                    <stop offset=".598" stop-color="#52A044"></stop>
-                                    <stop offset=".862" stop-color="#3F873F"></stop>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-
-                        <svg viewBox="0 0 128 128">
-                            <g fill="#61DAFB">
-                                <circle cx="64" cy="64" r="11.4"></circle>
-                                <path
-                                    d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z">
-                                </path>
-                            </g>
-                        </svg>
-
-
-                        <svg viewBox="0 0 128 128">
-                            <path fill="#F34F29"
-                                d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.001-11.501z">
-                            </path>
-                        </svg>
-
-                        <svg viewBox="0 0 128 128">
-
-                            <path fill="#00599c"
-                                d="M118.766 95.82c.89-1.543 1.441-3.28 1.441-4.843V36.78c0-1.558-.55-3.297-1.441-4.84l-55.32 31.94Zm0 0">
-                            </path>
-                            <path fill="#004482"
-                                d="m68.36 126.586 46.933-27.094c1.352-.781 2.582-2.129 3.473-3.672l-55.32-31.94L8.12 95.82c.89 1.543 2.121 2.89 3.473 3.672l46.933 27.094c2.703 1.562 7.13 1.562 9.832 0Zm0 0">
-                            </path>
-                            <path fill="#659ad2"
-                                d="M118.766 31.941c-.891-1.546-2.121-2.894-3.473-3.671L68.359 1.172c-2.703-1.563-7.129-1.563-9.832 0L11.594 28.27C8.89 29.828 6.68 33.66 6.68 36.78v54.196c0 1.562.55 3.3 1.441 4.843L63.445 63.88Zm0 0">
-                            </path>
-                            <path fill="#fff"
-                                d="M63.445 26.035c-20.867 0-37.843 16.977-37.843 37.844s16.976 37.844 37.843 37.844c13.465 0 26.024-7.247 32.77-18.91L79.84 73.335c-3.38 5.84-9.66 9.465-16.395 9.465-10.433 0-18.922-8.488-18.922-18.922 0-10.434 8.49-18.922 18.922-18.922 6.73 0 13.017 3.629 16.39 9.465l16.38-9.477c-6.75-11.664-19.305-18.91-32.77-18.91zM92.88 57.57v4.207h-4.207v4.203h4.207v4.207h4.203V65.98h4.203v-4.203h-4.203V57.57H92.88zm15.766 0v4.207h-4.204v4.203h4.204v4.207h4.207V65.98h4.203v-4.203h-4.203V57.57h-4.207z">
-                            </path>
-
-                        </svg>
-
-                        <svg viewBox="0 0 128 128">
-                            <linearGradient id="python-original-a" gradientUnits="userSpaceOnUse" x1="70.252"
-                                y1="1237.476" x2="170.659" y2="1151.089"
-                                gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
-                                <stop offset="0" stop-color="#5A9FD4"></stop>
-                                <stop offset="1" stop-color="#306998"></stop>
-                            </linearGradient>
-                            <linearGradient id="python-original-b" gradientUnits="userSpaceOnUse" x1="209.474"
-                                y1="1098.811" x2="173.62" y2="1149.537"
-                                gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
-                                <stop offset="0" stop-color="#FFD43B"></stop>
-                                <stop offset="1" stop-color="#FFE873"></stop>
-                            </linearGradient>
-                            <path fill="url(#python-original-a)"
-                                d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"
-                                transform="translate(0 10.26)"></path>
-                            <path fill="url(#python-original-b)"
-                                d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"
-                                transform="translate(0 10.26)"></path>
-                            <radialGradient id="python-original-c" cx="1825.678" cy="444.45" r="26.743"
-                                gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)"
-                                gradientUnits="userSpaceOnUse">
-                                <stop offset="0" stop-color="#B8B8B8" stop-opacity=".498"></stop>
-                                <stop offset="1" stop-color="#7F7F7F" stop-opacity="0"></stop>
-                            </radialGradient>
-                            <path opacity=".444" fill="url(#python-original-c)"
-                                d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z">
-                            </path>
-                        </svg>
-
-                        <svg viewBox="0 0 128 128">
-                            <defs>
-                                <linearGradient id="a" x1="53.974" x2="94.163" y1="54.974" y2="71.829"
-                                    gradientTransform="translate(29.387 60.096) scale(1.1436)"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#249361"></stop>
-                                    <stop offset="1" stop-color="#3ecf8e"></stop>
-                                </linearGradient>
-                                <linearGradient id="b" x1="36.156" x2="54.484" y1="30.578" y2="65.081"
-                                    gradientTransform="translate(29.387 60.096) scale(1.1436)"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop offset="0"></stop>
-                                    <stop offset="1" stop-opacity="0"></stop>
-                                </linearGradient>
-                            </defs>
-                            <path fill="url(#a)"
-                                d="M102.24 186.21c-3.267 4.117-9.904 1.862-9.977-3.397l-1.156-76.906h51.715c9.365 0 14.587 10.817 8.763 18.149z"
-                                transform="translate(-27.722 -60.338)"></path>
-                            <path fill="url(#b)" fill-opacity=".2"
-                                d="M102.24 186.21c-3.267 4.117-9.904 1.862-9.977-3.397l-1.156-76.906h51.715c9.365 0 14.587 10.817 8.763 18.149z"
-                                transform="translate(-27.722 -60.338)"></path>
-                            <path fill="#3ecf8e"
-                                d="M53.484 2.128c3.267-4.117 9.905-1.862 9.977 3.396l.508 76.907H12.902c-9.365 0-14.587-10.817-8.764-18.149z">
-                            </path>
-                        </svg>
-
-                        <svg viewBox="0 0 128 128">
+                    <svg viewBox="0 0 128 128">
+                        <g id="surface1">
                             <path
-                                d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
-                                fill="#38bdf8"></path>
-                        </svg>
+                                style=" stroke:none;fill-rule:nonzero;fill:rgb(86.666667%,0%,19.215686%);fill-opacity:1;"
+                                d="M 64 15.359375 L 16.332031 32.359375 L 23.601562 95.386719 L 64 117.761719 L 104.398438 95.386719 L 111.667969 32.359375 Z M 64 15.359375 ">
+                            </path>
+                            <path
+                                style=" stroke:none;fill-rule:nonzero;fill:rgb(76.470588%,0%,18.431373%);fill-opacity:1;"
+                                d="M 64 15.359375 L 64 26.726562 L 64 26.675781 L 64 117.761719 L 104.398438 95.386719 L 111.667969 32.359375 Z M 64 15.359375 ">
+                            </path>
+                            <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"
+                                d="M 64 26.675781 L 34.203125 93.492188 L 45.3125 93.492188 L 51.300781 78.539062 L 76.59375 78.539062 L 82.585938 93.492188 L 93.695312 93.492188 Z M 72.703125 69.324219 L 55.296875 69.324219 L 64 48.382812 Z M 72.703125 69.324219 ">
+                            </path>
+                        </g>
+                    </svg>
+
+                    <svg viewBox="0 0 128 128">
+                        <path fill="url(#a)"
+                            d="M66.958.825a6.07 6.07 0 0 0-6.035 0L11.103 29.76c-1.895 1.072-2.96 3.095-2.96 5.24v57.988c0 2.143 1.183 4.167 2.958 5.24l49.82 28.934a6.07 6.07 0 0 0 6.036 0l49.82-28.935c1.894-1.072 2.958-3.096 2.958-5.24V35c0-2.144-1.183-4.167-2.958-5.24z">
+                        </path>
+                        <path fill="url(#b)"
+                            d="M116.897 29.76 66.841.825A8.161 8.161 0 0 0 65.302.23L9.21 96.798a6.251 6.251 0 0 0 1.657 1.43l50.057 28.934c1.42.833 3.076 1.072 4.615.595l52.66-96.925a3.702 3.702 0 0 0-1.302-1.072z">
+                        </path>
+                        <path fill="url(#c)"
+                            d="M116.898 98.225c1.42-.833 2.485-2.262 2.958-3.81L65.066.108c-1.42-.238-2.959-.119-4.26.715L11.104 29.639l53.606 98.355c.71-.12 1.54-.358 2.25-.715z">
+                        </path>
+                        <defs>
+                            <linearGradient id="a" x1="34.513" x2="27.157" y1="15.535" y2="30.448"
+                                gradientTransform="translate(-129.242 -73.715) scale(6.18523)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#3F873F"></stop>
+                                <stop offset=".33" stop-color="#3F8B3D"></stop>
+                                <stop offset=".637" stop-color="#3E9638"></stop>
+                                <stop offset=".934" stop-color="#3DA92E"></stop>
+                                <stop offset="1" stop-color="#3DAE2B"></stop>
+                            </linearGradient>
+                            <linearGradient id="b" x1="30.009" x2="50.533" y1="23.359" y2="8.288"
+                                gradientTransform="translate(-129.242 -73.715) scale(6.18523)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset=".138" stop-color="#3F873F"></stop>
+                                <stop offset=".402" stop-color="#52A044"></stop>
+                                <stop offset=".713" stop-color="#64B749"></stop>
+                                <stop offset=".908" stop-color="#6ABF4B"></stop>
+                            </linearGradient>
+                            <linearGradient id="c" x1="21.917" x2="40.555" y1="22.261" y2="22.261"
+                                gradientTransform="translate(-129.242 -73.715) scale(6.18523)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset=".092" stop-color="#6ABF4B"></stop>
+                                <stop offset=".287" stop-color="#64B749"></stop>
+                                <stop offset=".598" stop-color="#52A044"></stop>
+                                <stop offset=".862" stop-color="#3F873F"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <svg viewBox="0 0 128 128">
+                        <g fill="#61DAFB">
+                            <circle cx="64" cy="64" r="11.4"></circle>
+                            <path
+                                d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z">
+                            </path>
+                        </g>
+                    </svg>
 
 
+                    <svg viewBox="0 0 128 128">
+                        <path fill="#F34F29"
+                            d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.001-11.501z">
+                        </path>
+                    </svg>
 
-                    </div>
+                    <svg viewBox="0 0 128 128">
+
+                        <path fill="#00599c"
+                            d="M118.766 95.82c.89-1.543 1.441-3.28 1.441-4.843V36.78c0-1.558-.55-3.297-1.441-4.84l-55.32 31.94Zm0 0">
+                        </path>
+                        <path fill="#004482"
+                            d="m68.36 126.586 46.933-27.094c1.352-.781 2.582-2.129 3.473-3.672l-55.32-31.94L8.12 95.82c.89 1.543 2.121 2.89 3.473 3.672l46.933 27.094c2.703 1.562 7.13 1.562 9.832 0Zm0 0">
+                        </path>
+                        <path fill="#659ad2"
+                            d="M118.766 31.941c-.891-1.546-2.121-2.894-3.473-3.671L68.359 1.172c-2.703-1.563-7.129-1.563-9.832 0L11.594 28.27C8.89 29.828 6.68 33.66 6.68 36.78v54.196c0 1.562.55 3.3 1.441 4.843L63.445 63.88Zm0 0">
+                        </path>
+                        <path fill="#fff"
+                            d="M63.445 26.035c-20.867 0-37.843 16.977-37.843 37.844s16.976 37.844 37.843 37.844c13.465 0 26.024-7.247 32.77-18.91L79.84 73.335c-3.38 5.84-9.66 9.465-16.395 9.465-10.433 0-18.922-8.488-18.922-18.922 0-10.434 8.49-18.922 18.922-18.922 6.73 0 13.017 3.629 16.39 9.465l16.38-9.477c-6.75-11.664-19.305-18.91-32.77-18.91zM92.88 57.57v4.207h-4.207v4.203h4.207v4.207h4.203V65.98h4.203v-4.203h-4.203V57.57H92.88zm15.766 0v4.207h-4.204v4.203h4.204v4.207h4.207V65.98h4.203v-4.203h-4.203V57.57h-4.207z">
+                        </path>
+
+                    </svg>
+
+                    <svg viewBox="0 0 128 128">
+                        <linearGradient id="python-original-a" gradientUnits="userSpaceOnUse" x1="70.252" y1="1237.476"
+                            x2="170.659" y2="1151.089" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
+                            <stop offset="0" stop-color="#5A9FD4"></stop>
+                            <stop offset="1" stop-color="#306998"></stop>
+                        </linearGradient>
+                        <linearGradient id="python-original-b" gradientUnits="userSpaceOnUse" x1="209.474" y1="1098.811"
+                            x2="173.62" y2="1149.537" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)">
+                            <stop offset="0" stop-color="#FFD43B"></stop>
+                            <stop offset="1" stop-color="#FFE873"></stop>
+                        </linearGradient>
+                        <path fill="url(#python-original-a)"
+                            d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"
+                            transform="translate(0 10.26)"></path>
+                        <path fill="url(#python-original-b)"
+                            d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"
+                            transform="translate(0 10.26)"></path>
+                        <radialGradient id="python-original-c" cx="1825.678" cy="444.45" r="26.743"
+                            gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#B8B8B8" stop-opacity=".498"></stop>
+                            <stop offset="1" stop-color="#7F7F7F" stop-opacity="0"></stop>
+                        </radialGradient>
+                        <path opacity=".444" fill="url(#python-original-c)"
+                            d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z">
+                        </path>
+                    </svg>
+
+                    <svg viewBox="0 0 128 128">
+                        <defs>
+                            <linearGradient id="a" x1="53.974" x2="94.163" y1="54.974" y2="71.829"
+                                gradientTransform="translate(29.387 60.096) scale(1.1436)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#249361"></stop>
+                                <stop offset="1" stop-color="#3ecf8e"></stop>
+                            </linearGradient>
+                            <linearGradient id="b" x1="36.156" x2="54.484" y1="30.578" y2="65.081"
+                                gradientTransform="translate(29.387 60.096) scale(1.1436)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0"></stop>
+                                <stop offset="1" stop-opacity="0"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#a)"
+                            d="M102.24 186.21c-3.267 4.117-9.904 1.862-9.977-3.397l-1.156-76.906h51.715c9.365 0 14.587 10.817 8.763 18.149z"
+                            transform="translate(-27.722 -60.338)"></path>
+                        <path fill="url(#b)" fill-opacity=".2"
+                            d="M102.24 186.21c-3.267 4.117-9.904 1.862-9.977-3.397l-1.156-76.906h51.715c9.365 0 14.587 10.817 8.763 18.149z"
+                            transform="translate(-27.722 -60.338)"></path>
+                        <path fill="#3ecf8e"
+                            d="M53.484 2.128c3.267-4.117 9.905-1.862 9.977 3.396l.508 76.907H12.902c-9.365 0-14.587-10.817-8.764-18.149z">
+                        </path>
+                    </svg>
+
+                    <svg viewBox="0 0 128 128">
+                        <path
+                            d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
+                            fill="#38bdf8"></path>
+                    </svg>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <span class="projects-separator"></span>
-
-        <div class="projects">
-            <div id="proyectos" class="projects-container">
-                <h1 class="projects-title">Proyectos</h1>
-                <p class="projects-description">
+        <section id="projects" class="projects__section">
+            <div class="projects section__projects">
+                <h1 class="projects__title">Proyectos</h1>
+                <p class="projects__description">
                     Explora algunos de los proyectos en los que he trabajado,<br> donde combino arquitectura backend
                     sólida,<br>
                     integración de datos eficiente y un enfoque centrado en la funcionalidad.
                 </p>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3 class="project-title">Online Cheating Detection Tool</h3>
-                        <p class="project-description">
-                            Detección de conductas sospechosas en exámenes en línea mediante análisis multimodal.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">AI</span>
-                        </div>
-                        <a href="https://github.com/fcapobiancot/cheating-detection-tool" target="_blank"
-                            class="social-link">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-card">
-                        <h3 class="project-title">API Events</h3>
-                        <p class="project-description">
-                            API para gestión de eventos con arquitectura modular.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Backend</span>
-                            <span class="tag">Rest API</span>
-                        </div>
-                        <a href="https://github.com/fcapobiancot/APIEventsBackEnd" target="_blank" class="social-link">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="project-card">
-                        <h3 class="project-title">OrderNow</h3>
-                        <p class="project-description">
-                            Aplicación web React para gestión de pedidos, desarrollada con Vite, enfocada en eficiencia
-                            y
-                            usabilidad.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Web Development</span>
-                        </div>
-                        <a href="https://github.com/ucb-scz-dims/SIS-213-ON" target="_blank" class="social-link">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
-        </div>
-
-        <div class="section4">
-            <div id="blog" class="container4">
-                <div class="blog">
-                    <h1 class="blog-h1">Blog</h1>
-                    <p class="blog-p">FEBRERO 2025<span class="slash"> / </span>POST</p>
-                    <h2 class="blog-h2">
-                        <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ingenieraedadesoftware-desarrolloweb-dotnet-activity-7299632316132347905-xI8r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
-                            target="_blank" class="blog-link">
-                            Aprender haciendo: La clave <br>en Ingeniería de Software →
-                        </a>
-                    </h2>
-                    <p class="blog-p">MARZO 2025<span class="slash"> / </span>POST</p>
-                    <h2 class="blog-h2">
-                        <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ingenieraedadesoftware-softwareengineering-activity-7307959456431026179-9H-q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
-                            target="_blank" class="blog-link">
-                            Software engineering at <br>GOOGLE →
-                        </a>
-                    </h2>
-                    <p class="blog-p">ABRIL 2025<span class="slash"> / </span>POST</p>
-                    <h2 class="blog-h2">
-                        <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ai-mcp-innovaciaejn-activity-7322833573055463425-oy5N?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
-                            target="_blank" class="blog-link">
-                            Que son los MCP's →
-                        </a>
-                    </h2>
-                </div>
-                <div class="contact">
-                    <h1 class="contact-h1">Contactame</h1>
-                    <div class="social-icons2">
-                        <a href="https://www.linkedin.com/in/fernandocapobiancot2/" target="_blank" class="social-link">
-                            <span class="fa fa-linkedin-square"></span>
-                        </a>
-                        <a href="https://github.com/fcapobiancot" target="_blank" class="social-link">
-                            <span class="fa fa-github"></span>
-                        </a>
-                        <a href="https://wa.me/59177342358" target="_blank" class="social-link">
-                            <span class="fa fa-whatsapp"></span>
-                        </a>
-                        <a href="https://www.instagram.com/your-profile" target="_blank" class="social-link">
-                            <span class="fa fa-instagram"></span>
-                        </a>
+            <div class="projects__grid">
+                <div class="projects__card">
+                    <h3 class="projects__card-title">Online Cheating Detection Tool</h3>
+                    <p class="projects__card-description">
+                        Detección de conductas sospechosas en exámenes en línea mediante análisis multimodal.
+                    </p>
+                    <div class="projects__card-tags">
+                        <span class="projects__card-tag">Python</span>
+                        <span class="projects__card-tag">AI</span>
                     </div>
-                    <div class="contact-form">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Ingresa tu nombre">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Tu correo electrónico">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Asunto">
-                            </div>
-
-                            <div class="form-group">
-                                <textarea class="form-control message-input"
-                                    placeholder="Escribe tu mensaje"></textarea>
-                            </div>
-
-                            <button type="submit" class="submit-btn">
-                                Enviar <span class="arrow">→</span>
-                            </button>
-                        </form>
-                    </div>
+                    <a href="https://github.com/fcapobiancot/cheating-detection-tool" target="_blank">
+                        <i class="fa fa-github projects__card-github"></i>
+                    </a>
                 </div>
-            </div>
-        </div>
-        <div class="profile-container">
-            <div class="profile-image"></div>
-            <div class="profile-info">
-                <h2 class="profile-name">Fernando Capobianco</h2>
-                <p class="profile-title">Backend Developer</p>
-                <div class="social-icons3">
-                    <a href="https://www.linkedin.com/in/fernandocapobiancot2/" target="_blank" class="social-link">
-                        <span class="fa fa-linkedin-square"></span>
+                <div class="projects__card">
+                    <h3 class="projects__card-title">API Events</h3>
+                    <p class="projects__card-description">
+                        API para gestión de eventos con arquitectura modular.
+                    </p>
+                    <div class="projects__card-tags">
+                        <span class="projects__card-tag">Backend</span>
+                        <span class="projects__card-tag">Rest API</span>
+                    </div>
+                    <a href="https://github.com/fcapobiancot/APIEventsBackEnd" target="_blank">
+                        <i class="fa fa-github projects__card-github"></i>
                     </a>
-                    <a href="https://github.com/fcapobiancot" target="_blank" class="social-link">
-                        <span class="fa fa-github"></span>
-                    </a>
-                    <a href="https://wa.me/59177342358" target="_blank" class="social-link">
-                        <span class="fa fa-whatsapp"></span>
-                    </a>
-                    <a href="https://www.instagram.com/your-profile" target="_blank" class="social-link">
-                        <span class="fa fa-instagram"></span>
+                </div>
+                <div class="projects__card">
+                    <h3 class="projects__card-title">OrderNow</h3>
+                    <p class="projects__card-description">
+                        Aplicación web React para gestión de pedidos, desarrollada con Vite, enfocada en eficiencia
+                        y
+                        usabilidad.
+                    </p>
+                    <div class="projects__card-tags">
+                        <span class="projects__card-tag">React</span>
+                        <span class="projects__card-tag">Web Development</span>
+                    </div>
+                    <a href="https://github.com/ucb-scz-dims/SIS-213-ON" target="_blank">
+                        <i class="fa fa-github projects__card-github"></i>
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
 
-    </main>
-
-
-    <footer class="footer">
-        <div class="nav-links">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about-me" class="nav-link">About</a>
-            <a href="#proyectos" class="nav-link">Projects</a>
-            <a href="#blog" class="nav-link">Blog</a>
-        </div>
-        <div class="copyright">
-            Copyright © 2025 | Fernando Capobianco - Backend
-        </div>
-    </footer>
+        <section id="blogcontact" class="blogcontact__section">
+            <div class="blogcontact section__blogcontact">
+                <div class="blogcontact__blog">
+                    <h1 class="blogcontact__blog-title">Blog</h1>
+                    <div class="blogcontact__blog-list">
+                        <div class="blogcontact__blog-post">
+                            <span class="blogcontact__blog-date">FEBRERO 2025 <span
+                                    class="blogcontact__blog-divider">/</span> POST</span>
+                            <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ingenieraedadesoftware-desarrolloweb-dotnet-activity-7299632316132347905-xI8r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
+                                target="_blank" class="blogcontact__blog-link">
+                                <h2 class="blogcontact__blog-post-title">
+                                    Aprender haciendo: La clave en Ingeniería de Software &rarr;
+                                </h2>
+                            </a>
+                        </div>
+                        <div class="blogcontact__blog-post">
+                            <span class="blogcontact__blog-date">MARZO 2025 <span
+                                    class="blogcontact__blog-divider">/</span> POST</span>
+                            <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ingenieraedadesoftware-softwareengineering-activity-7307959456431026179-9H-q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
+                                target="_blank" class="blogcontact__blog-link">
+                                <h2 class="blogcontact__blog-post-title">
+                                    Software engineering at GOOGLE &rarr;
+                                </h2>
+                            </a>
+                        </div>
+                        <div class="blogcontact__blog-post">
+                            <span class="blogcontact__blog-date">ABRIL 2025 <span
+                                    class="blogcontact__blog-divider">/</span> POST</span>
+                            <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ai-mcp-innovaciaejn-activity-7322833573055463425-oy5N?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
+                                target="_blank" class="blogcontact__blog-link">
+                                <h2 class="blogcontact__blog-post-title">
+                                    Que son los MCP's &rarr;
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blogcontact__contact">
+                    <h1 class="blogcontact__contact-title">Contactame</h1>
+                    <div class="blogcontact__contact-socials">
+                        <a href="https://www.linkedin.com/in/fernandocapobiancot2/" target="_blank"><span
+                                class="fa fa-linkedin-square"></span></a>
+                        <a href="https://github.com/fcapobiancot" target="_blank"><span class="fa fa-github"></span></a>
+                        <a href="https://wa.me/59177342358" target="_blank"><span class="fa fa-whatsapp"></span></a>
+                        <a href="https://www.instagram.com/your-profile" target="_blank"><span
+                                class="fa fa-instagram"></span></a>
+                    </div>
+                    <form class="blogcontact__contact-form">
+                        <input type="text" class="blogcontact__contact-input" placeholder="Ingresa tu nombre" required>
+                        <input type="email" class="blogcontact__contact-input" placeholder="Tu correo electrónico"
+                            required>
+                        <input type="text" class="blogcontact__contact-input" placeholder="Asunto" required>
+                        <textarea class="blogcontact__contact-textarea" placeholder="Escribe tu mensaje"
+                            required></textarea>
+                        <button type="submit" class="blogcontact__contact-submit">Enviar &rarr;</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer__container">
+                <nav class="footer__nav">
+                    <a href="#home" class="footer__link">Home</a>
+                    <a href="#about" class="footer__link">About</a>
+                    <a href="#projects" class="footer__link">Projects</a>
+                    <a href="#blogcontact" class="footer__link">Blog</a>
+                </nav>
+                <div class="footer__copyright">
+                    Copyright © 2025 | Fernando Capobianco - Backend
+                </div>
+            </div>
+        </footer>
 </body>
 
 </html>

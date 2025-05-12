@@ -1,0 +1,161 @@
+@import url('./navbar/navbar.css');
+@import url('./divider/divider.css');
+@import url('./hero/hero.css');
+@import url('./about/about.css');
+@import url('experience/experience.css');
+@import url('./projects/projects.css');
+@import url('./blog&contact/blog&contact.css');
+@import url('./footer/footer.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+
+}
+
+h3 {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h2 {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+h1 {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+p {
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 100;
+}
+
+a {
+    color: #CFCFCF;
+    text-decoration: none;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #121212;
+    color: #CFCFCF;
+}
+
+
+.body__header {
+    padding-top: 10vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header__main {
+    margin-top: 10vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.section__hero {
+    margin: 0% 5%;
+    padding: 2rem 2rem;
+}
+
+.section__about {
+    margin: 10% 5%;
+    padding: 2rem 5rem;
+}
+
+.section__experience {
+    margin: 10% 5%;
+    padding: 0rem 5rem;
+}
+
+.section_blogcontact {
+    margin: 10% 5%;
+    padding: 0rem 5rem;
+}
+
+
+@media (max-width: 600px) {
+    html {
+        padding: 0 1rem;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .main__hero {
+        margin: 0% 0%;
+    }
+
+    .section__about {
+        margin: 10% 5%;
+        padding: 0;
+    }
+
+    .section__experience {
+        margin: 10% 5%;
+        padding: 0;
+    }
+
+
+}
+
+@media (max-width: 1175) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

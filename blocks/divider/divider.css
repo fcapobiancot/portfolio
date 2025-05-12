@@ -1,0 +1,93 @@
+.divider {
+    height: 2px;
+    background: linear-gradient(to bottom, transparent, #CFCFCF, transparent);
+}
+
+.divider--vertical {
+    width: 1px;
+    height: 125%;
+    background: linear-gradient(to bottom, transparent, #CFCFCF, transparent);
+}
+
+.divider--vertical--home {
+    height: 200px;
+}
+
+.divider--vertical--about {
+    height: 250px;
+}
+
+.divider--vertical--proyectos {
+    height: 300px;
+}
+
+.divider--vertical--blogs {
+    height: 250px;
+}
+
+.divider--vertical--last {
+    height: 200px;
+}
+
+.divider--horizontal {
+    position: absolute;
+    bottom: 0;
+    width: 150%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #CFCFCF, transparent);
+}
+
+
+.divider--horizontal1--hero {
+    position: absolute;
+    height: 1px;
+    width: 500px;
+    background: linear-gradient(to right, transparent, #CFCFCF, transparent);
+    left: 0;
+    top: 0;
+    transform: translateX(-25%);
+}
+
+.divider--vertical1--hero {
+    position: absolute;
+    width: 1px;
+    height: 350px;
+    background: linear-gradient(to bottom, transparent, #CFCFCF, transparent);
+    left: 0;
+    top: 0;
+    transform: translateY(-25%);
+}
+
+.divider--horizontal2--hero {
+    position: absolute;
+    height: 1px;
+    width: 500px;
+    background: linear-gradient(to right, transparent, #CFCFCF, transparent);
+    right: 0;
+    bottom: 0;
+    transform: translateX(25%);
+}
+
+.divider--vertical2--hero {
+    position: absolute;
+    width: 1px;
+    height: 350px;
+    background: linear-gradient(to bottom, transparent, #CFCFCF, transparent);
+    right: 0;
+    bottom: 0;
+    transform: translateY(25%);
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .divider--vertical,
+    .divider--vertical--home,
+    .divider--vertical--about,
+    .divider--vertical--proyectos,
+    .divider--vertical--blogs,
+    .divider--vertical--last {
+        display: none;
+    }
+
+}
