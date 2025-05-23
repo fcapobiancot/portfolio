@@ -348,63 +348,95 @@
             </div>
         </section>
 
-        <section id="blogcontact" class="blogcontact__section">
-            <div class="blogcontact section__blogcontact">
-                <div class="blogcontact__blog">
-                    <h1 class="blogcontact__blog-title">Blog</h1>
-                    <div class="blogcontact__blog-list">
-                        <div class="blogcontact__blog-post">
-                            <span class="blogcontact__blog-date">FEBRERO 2025 <span
-                                    class="blogcontact__blog-divider">/</span> POST</span>
-                            <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ingenieraedadesoftware-desarrolloweb-dotnet-activity-7299632316132347905-xI8r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
-                                target="_blank" class="blogcontact__blog-link">
-                                <h2 class="blogcontact__blog-post-title">
-                                    Aprender haciendo: La clave en Ingeniería de Software &rarr;
-                                </h2>
-                            </a>
+        <section id="blog" class="blog-section">
+            <div class="blog section__blog">
+                <h1 class="blog__title">Blog</h1>
+                <div class="blog-cards" role="list">
+                    <article class="blog-card" tabindex="0" role="listitem" data-url="https://example.com/blog1">
+                        <header class="blog-card__header">
+                            <span class="blog-card__date">Febrero 2025</span>
+                            <span class="blog-card__type">Post</span>
+                        </header>
+                        <div class="blog-card__content">
+                            <h2 class="blog-card__title">Aprender haciendo: La clave en Ingeniería de Software</h2>
+                            <p class="blog-card__preview"
+                                data-fulltext="Aprender haciendo es fundamental para el desarrollo de habilidades en ingeniería de software. La experiencia práctica permite consolidar conocimientos teóricos y adaptarse a los retos reales del sector. Participar en proyectos reales y resolver problemas concretos fomenta el pensamiento crítico y la creatividad, habilidades esenciales para cualquier ingeniero de software.">
+                            </p>
                         </div>
-                        <div class="blogcontact__blog-post">
-                            <span class="blogcontact__blog-date">MARZO 2025 <span
-                                    class="blogcontact__blog-divider">/</span> POST</span>
-                            <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ingenieraedadesoftware-softwareengineering-activity-7307959456431026179-9H-q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
-                                target="_blank" class="blogcontact__blog-link">
-                                <h2 class="blogcontact__blog-post-title">
-                                    Software engineering at GOOGLE &rarr;
-                                </h2>
-                            </a>
+                        <footer class="blog-card__footer">
+                            <button class="blog-card__like-btn" aria-label="Me gusta este post" type="button"
+                                tabindex="0">
+                                <span class="fa fa-heart-o" aria-hidden="true"></span>
+                            </button>
+                            <span class="blog-card__like-count" aria-live="polite">0</span>
+                            <a href="https://example.com/blog1" class="blog-card__read-more" tabindex="0">Leer más
+                                &rarr;</a>
+                        </footer>
+                    </article>
+                    <article class="blog-card" tabindex="0" role="listitem" data-url="https://example.com/blog2">
+                        <header class="blog-card__header">
+                            <span class="blog-card__date">Marzo 2025</span>
+                            <span class="blog-card__type">Post</span>
+                        </header>
+                        <div class="blog-card__content">
+                            <h2 class="blog-card__title">Software engineering at GOOGLE</h2>
+                            <p class="blog-card__preview"
+                                data-fulltext="Trabajar en ingeniería de software en Google implica enfrentarse a desafíos técnicos de gran escala. La colaboración en equipos multidisciplinarios y el acceso a tecnologías de punta permiten un crecimiento profesional acelerado. La cultura de innovación y aprendizaje continuo es clave para el éxito en este entorno.">
+                            </p>
                         </div>
-                        <div class="blogcontact__blog-post">
-                            <span class="blogcontact__blog-date">ABRIL 2025 <span
-                                    class="blogcontact__blog-divider">/</span> POST</span>
-                            <a href="https://www.linkedin.com/posts/fernandocapobiancot2_ai-mcp-innovaciaejn-activity-7322833573055463425-oy5N?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwmu3YBN4AdB5HRohWreE6nlRkUyU92ZCg"
-                                target="_blank" class="blogcontact__blog-link">
-                                <h2 class="blogcontact__blog-post-title">
-                                    Que son los MCP's &rarr;
-                                </h2>
-                            </a>
+                        <footer class="blog-card__footer">
+                            <button class="blog-card__like-btn" aria-label="Me gusta este post" type="button"
+                                tabindex="0">
+                                <span class="fa fa-heart-o" aria-hidden="true"></span>
+                            </button>
+                            <span class="blog-card__like-count" aria-live="polite">0</span>
+                            <a href="https://example.com/blog2" class="blog-card__read-more" tabindex="0">Leer más
+                                &rarr;</a>
+                        </footer>
+                    </article>
+                    <article class="blog-card" tabindex="0" role="listitem" data-url="https://example.com/blog3">
+                        <header class="blog-card__header">
+                            <span class="blog-card__date">Abril 2025</span>
+                            <span class="blog-card__type">Post</span>
+                        </header>
+                        <div class="blog-card__content">
+                            <h2 class="blog-card__title">Que son los MCP's</h2>
+                            <p class="blog-card__preview"
+                                data-fulltext="Los MCP's (Model Context Protocols) son una metodología emergente en el desarrollo de software. Permiten una mejor integración entre modelos y contextos, facilitando la interoperabilidad y la escalabilidad de sistemas complejos. Su adopción está creciendo en la industria tecnológica moderna.">
+                            </p>
                         </div>
-                    </div>
+                        <footer class="blog-card__footer">
+                            <button class="blog-card__like-btn" aria-label="Me gusta este post" type="button"
+                                tabindex="0">
+                                <span class="fa fa-heart-o" aria-hidden="true"></span>
+                            </button>
+                            <span class="blog-card__like-count" aria-live="polite">0</span>
+                            <a href="https://example.com/blog3" class="blog-card__read-more" tabindex="0">Leer más
+                                &rarr;</a>
+                        </footer>
+                    </article>
                 </div>
-                <div class="blogcontact__contact">
-                    <h1 class="blogcontact__contact-title">Contactame</h1>
-                    <div class="blogcontact__contact-socials">
-                        <a href="https://www.linkedin.com/in/fernandocapobiancot2/" target="_blank"><span
-                                class="fa fa-linkedin-square"></span></a>
-                        <a href="https://github.com/fcapobiancot" target="_blank"><span class="fa fa-github"></span></a>
-                        <a href="https://wa.me/59177342358" target="_blank"><span class="fa fa-whatsapp"></span></a>
-                        <a href="https://www.instagram.com/your-profile" target="_blank"><span
-                                class="fa fa-instagram"></span></a>
-                    </div>
-                    <form class="blogcontact__contact-form">
-                        <input type="text" class="blogcontact__contact-input" placeholder="Ingresa tu nombre" required>
-                        <input type="email" class="blogcontact__contact-input" placeholder="Tu correo electrónico"
-                            required>
-                        <input type="text" class="blogcontact__contact-input" placeholder="Asunto" required>
-                        <textarea class="blogcontact__contact-textarea" placeholder="Escribe tu mensaje"
-                            required></textarea>
-                        <button type="submit" class="blogcontact__contact-submit">Enviar &rarr;</button>
-                    </form>
+            </div>
+            <script src="./blocks/blog&contact/blog-cards.js"></script>
+        </section>
+        <section id="contact" class="contact-section">
+            <div class="contact section__contact">
+                <h1 class="contact__title">Contactame</h1>
+                <div class="contact__socials">
+                    <a href="https://www.linkedin.com/in/fernandocapobiancot2/" target="_blank"><span
+                            class="fa fa-linkedin-square"></span></a>
+                    <a href="https://github.com/fcapobiancot" target="_blank"><span class="fa fa-github"></span></a>
+                    <a href="https://wa.me/59177342358" target="_blank"><span class="fa fa-whatsapp"></span></a>
+                    <a href="https://www.instagram.com/your-profile" target="_blank"><span
+                            class="fa fa-instagram"></span></a>
                 </div>
+                <form class="contact__form">
+                    <input type="text" class="contact__input" placeholder="Ingresa tu nombre" required>
+                    <input type="email" class="contact__input" placeholder="Tu correo electrónico" required>
+                    <input type="text" class="contact__input" placeholder="Asunto" required>
+                    <textarea class="contact__textarea" placeholder="Escribe tu mensaje" required></textarea>
+                    <button type="submit" class="contact__submit">Enviar &rarr;</button>
+                </form>
             </div>
         </section>
         <footer class="footer">

@@ -1,98 +1,68 @@
-.blogcontact__section {
+/* Blog Section */
+.blog-section {
     width: 100%;
     background: #111;
     color: #B3B3B3;
-    padding: 80px 0 60px 0;
+    padding: 80px 0 40px 0;
     display: flex;
     justify-content: center;
 }
 
-.blogcontact {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 60px;
+.section__blog {
+    width: 100%;
+    max-width: 1600px;
     margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.blogcontact__blog {
-    flex: 1;
-    padding-right: 40px;
-    border-right: 1px solid #222;
-}
-
-.blogcontact__blog-title {
+.blog__title {
     font-size: 56px;
     font-weight: bold;
     margin-bottom: 40px;
     color: #B3B3B3;
+    text-align: center;
+    width: 100%;
 }
 
-.blogcontact__blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-}
-
-.blogcontact__blog-post {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.blogcontact__blog-link {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.2s;
-    display: block;
-}
-
-.blogcontact__blog-link:hover .blogcontact__blog-post-title {
-    color: #4A90E2;
-    text-decoration: underline;
-}
-
-.blogcontact__blog-date {
-    font-size: 18px;
+.contact-section {
+    width: 100%;
+    background: #111;
     color: #B3B3B3;
-    letter-spacing: 1px;
-    font-family: "Inter", sans-serif;
+    padding: 40px 0 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.blogcontact__blog-divider {
-    color: #4A90E2;
-}
-
-.blogcontact__blog-post-title {
-    font-size: 36px;
-    color: #CFCFCF;
-    font-weight: 400;
-    margin: 0;
-}
-
-.blogcontact__contact {
-    flex: 1;
-    padding-left: 40px;
+.section__contact {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 5%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
-.blogcontact__contact-title {
+.contact__title {
     font-size: 56px;
     font-weight: bold;
     margin-bottom: 24px;
     color: #B3B3B3;
+    text-align: center;
+    width: 100%;
 }
 
-.blogcontact__contact-socials {
+.contact__socials {
     display: flex;
     gap: 18px;
     margin-bottom: 32px;
+    justify-content: center;
+    width: 100%;
 }
 
-.blogcontact__contact-socials .fa {
+.contact__socials .fa {
     font-size: 32px;
     color: #CFCFCF;
     background: none;
@@ -101,12 +71,12 @@
     transition: color 0.2s, background 0.2s;
 }
 
-.blogcontact__contact-socials .fa:hover {
+.contact__socials .fa:hover {
     color: #4A90E2;
     background: #181818;
 }
 
-.blogcontact__contact-form {
+.contact__form {
     background: #1a1a1a;
     border-radius: 12px;
     padding: 32px 36px 24px 36px;
@@ -116,10 +86,11 @@
     width: 100%;
     max-width: 480px;
     box-sizing: border-box;
+    align-items: center;
 }
 
-.blogcontact__contact-input,
-.blogcontact__contact-textarea {
+.contact__input,
+.contact__textarea {
     background: transparent;
     border: none;
     border-bottom: 1px solid #333;
@@ -132,18 +103,18 @@
     resize: none;
 }
 
-.blogcontact__contact-input::placeholder,
-.blogcontact__contact-textarea::placeholder {
+.contact__input::placeholder,
+.contact__textarea::placeholder {
     color: #888;
     opacity: 1;
 }
 
-.blogcontact__contact-textarea {
+.contact__textarea {
     min-height: 80px;
     max-height: 180px;
 }
 
-.blogcontact__contact-submit {
+.contact__submit {
     background: none;
     border: none;
     color: #CFCFCF;
@@ -155,63 +126,213 @@
     transition: color 0.2s;
 }
 
-.blogcontact__contact-submit:hover {
+.contact__submit:hover {
     color: #4A90E2;
 }
 
-/* ...existing code... */
+.blog-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 24px;
+}
+
+.blog-card {
+    background: #181818;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.18);
+    border: 1px solid #232323;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.18s;
+    cursor: pointer;
+    outline: none;
+    min-width: 0;
+    position: relative;
+}
+
+
+.blog-card__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px 0 24px;
+}
+
+.blog-card__date {
+    background: #232323;
+    color: #B3B3B3;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+}
+
+.blog-card__type {
+    background: #4A90E2;
+    color: #fff;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.blog-card__content {
+    padding: 16px 24px 0 24px;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.blog-card__title {
+    font-size: 1.35rem;
+    color: #CFCFCF;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+}
+
+.blog-card__preview {
+    color: #B3B3B3;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+    min-height: 2.5em;
+}
+
+.blog-card__footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px 20px 24px;
+    border-top: 1px solid #232323;
+    font-family: 'Inter', sans-serif;
+}
+
+.blog-card__like-btn {
+    background: none;
+    border: none;
+    color: #B3B3B3;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.15s;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.blog-card__like-btn:focus {
+    box-shadow: 0 0 0 2px #4A90E2;
+}
+
+.blog-card__like-btn--active,
+.blog-card__like-btn:hover {
+    color: #E74C3C;
+    transform: scale(1.15);
+}
+
+.blog-card__like-count {
+    color: #B3B3B3;
+    font-size: 1rem;
+    min-width: 1.5em;
+    text-align: center;
+}
+
+.blog-card__read-more {
+    margin-left: auto;
+    color: #4A90E2;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration 0.2s, color 0.2s;
+    outline: none;
+}
+
+.blog-card__read-more:hover,
+.blog-card__read-more:focus {
+    text-decoration: underline;
+    color: #7bb6f7;
+}
 
 @media (max-width: 1100px) {
-    .blogcontact {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 60px;
-    }
 
-    .blogcontact__blog,
-    .blogcontact__contact {
-        padding: 0;
-        border: none;
-        width: 100%;
-    }
-
-    .blogcontact__contact-form {
+    .section__blog,
+    .section__contact {
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0 2vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .blog-cards {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .blog-card__header,
+    .blog-card__content,
+    .blog-card__footer {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 }
 
 @media (max-width: 700px) {
 
-    .blogcontact__blog-title,
-    .blogcontact__contact-title {
+    .blog__title,
+    .contact__title {
         font-size: 32px;
     }
 
-    .blogcontact__blog-post-title {
+    .blog-card__title {
         font-size: 20px;
     }
 
-    .blogcontact__blog-date {
+    .blog-card__date {
         font-size: 14px;
     }
 
-    .blogcontact__contact-form {
+    .contact__form {
         padding: 18px 10px 14px 10px;
         width: 100%;
         min-width: 0;
         box-sizing: border-box;
         margin: 0 auto;
+        align-items: center;
     }
 
-    .blogcontact__contact {
-        align-items: stretch;
+    .section__contact {
+        align-items: center;
         width: 100%;
     }
 }
 
+@media (max-width: 600px) {
+    .blog-cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .blog-card {
+        border-radius: 8px;
+    }
+
+    .blog-card__header,
+    .blog-card__content,
+    .blog-card__footer {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
 @media (max-width: 400px) {
-    .blogcontact__contact-form {
+    .contact__form {
         padding: 8px 2px 8px 2px;
         margin: 0 auto;
     }
